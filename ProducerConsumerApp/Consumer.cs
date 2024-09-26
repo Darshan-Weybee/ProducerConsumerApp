@@ -16,9 +16,12 @@ namespace ProducerConsumerApp
                 {
                     try
                     {
+                        if (string.IsNullOrEmpty(message))
+                            throw new Exception("Request is not valid.");
+
                         lock (ProducerConsumer.consoleLock)
                         {  
-                            Console.WriteLine($"Your requested completed successfully for {message}");
+                            Console.WriteLine($"Successfull : Your requested completed successfully for {message}");
                             Producer.successCount++;
                         }
                     }
@@ -26,7 +29,7 @@ namespace ProducerConsumerApp
                     {
                         lock (ProducerConsumer.consoleLock)
                         {
-                            Console.WriteLine("Some error occured while parsing your request.");
+                            Console.WriteLine("Unsuccessfull : Some error occured while parsing your request.");
                             Producer.failureCount++;
                         }
                     }
