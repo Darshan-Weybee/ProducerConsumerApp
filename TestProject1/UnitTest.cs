@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestPlatform.Utilities;
 using ProducerConsumerApp;
 
-namespace TestProject1
+namespace UnitTest
 {
     public class UnitTest
     {
